@@ -10,9 +10,9 @@ public class WhenFeedingTheAnimals {
     public void shouldFeedCatsTuna() {
         Feeder feeder = new Feeder();
 
-        String food = feeder.feeds("Cat", false);
+        String food = feeder.feeds("Cat", true);
 
-        Assert.assertEquals("Tuna", food);
+        Assert.assertEquals("tuna", food);
     }
 
     @Test
@@ -40,6 +40,20 @@ public class WhenFeedingTheAnimals {
         String food = feeder.feeds("Cat", true);
 
         Assert.assertEquals("Salmon", food);
+
+    }
+    @Test
+    public void shouldFeedPremiumDogsPremiumFood(){
+        Feeder feeder = new Feeder();
+         String food = feeder.feeds("Dog",true);
+         Assert.assertEquals("steak", food);
+
+    }
+    @Test
+    public void shouldFeedPremiumHampsterPremiumFood(){
+        Feeder feeder = new Feeder();
+        String food = feeder.feeds("Hamster",true);
+        Assert.assertEquals("lettuce",food);
 
     }
 }
